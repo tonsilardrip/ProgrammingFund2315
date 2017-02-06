@@ -1,0 +1,21 @@
+body
+    {
+        background-color:silver;
+    }
+    
+h1
+    {
+        color:#7A5DC7;
+        text-align:center;
+        
+    }
+
+    
+.mypagewidth
+{
+    margin:auto;
+	width:1100px;
+	background-color:#E0FFFF;
+	padding:1px; border:black 1px solid;
+	
+}

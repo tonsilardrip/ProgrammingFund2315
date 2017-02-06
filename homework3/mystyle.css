@@ -1,0 +1,37 @@
+body 
+{
+    background-color:#E6E6FA;
+}
+h1
+    {
+        color:#7A5DC7;
+        text-align:center;
+        
+    }
+
+    
+.mypagewidth
+{
+    margin:auto;
+	width:1100px;
+	background-color:#E0FFFF;
+	padding:1px; border:black 1px solid;
+}
+.menubar1 { padding: 1px; }
+.menubar1 > a {
+    font-family:"Arial", helvetica, sans-serif;
+    font-size: 13px ;
+    background: purple;
+    padding: 5px 8px;
+    color:#E6E6FA;
+    margin-right: 2px ;
+    text-decoration:none;
+    border-radius: 5px;
+    transition: background 0.5s linear 0s, color 0.5s linear 0s ;
+    
+}
+.menubar1 > a:hover {
+     background:#E6E6FA;
+     color:purple;
+    
+}

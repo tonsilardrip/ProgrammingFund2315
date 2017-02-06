@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lesson19-D</title>
+<script>
+
+function run(){
+	
+	var story = "Oh dear, you're dead and so is your entire village.";
+	
+	document.getElementById("textResponse").innerHTML = story;
+	
+	
+	var imageBurn = "http://4.bp.blogspot.com/-UkuLqg6cWPA/TfDq8DQPPcI/AAAAAAAAA6A/e1zTK8365Jo/s400/wildfire.jpg";
+	document.getElementById("imageA").src = imageBurn;
+}	
+	
+function fight(){	
+	
+	var story = "You have saved your village! Now let the light shine upon your glorious armor";
+	
+	
+	document.getElementById("textResponse").innerHTML = story;	
+
+	var imageHero = "http://img04.deviantart.net/ef44/i/2009/304/1/0/pc_wallpaper___medieval_hero_by_gabrielrm.jpg";
+	document.getElementById("imageA").src = imageHero;
+}
+</script>
+</head>
+<body>
+
+<h1>Choose Your Adventure</h1>
+<img id="imageA" src="http://img4.wikia.nocookie.net/__cb20140207192723/moon-guard/images/1/16/Dragon_fire2.jpg" width="400" height="250" />
+
+<p id="textResponse">You are walking calmly through a field of flowers when all of a sudden a dragon appears to challenge you. What do you do?</p>
+
+<input type="submit" value="Run away!" onClick="run()" />
+<input type="submit" value="Draw your sword and fight!" onClick="fight()" />
+
+<p id="copyright">(C) 2008 Chris Scalf Illustrations. Used for learning under Academic Fair Use. Other images from http://alleducationmatters.blogspot.com/ and GabrielRM http://www.deviantart.com/morelikethis/142079471</p>
+
+</body>
+</html>

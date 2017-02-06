@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lesson19-B</title>
+
+<h1>What time is it?</h1>
+
+<script>
+
+function count()
+{
+    var countTo = prompt("What number do you want me to count to?")
+    
+    countTo = parseFloat(countTo);
+    
+    
+    for (var i = 1 ; i<= countTo; i++)
+        {
+            //outputs the value of i and concantenate a br tag to force a new line. 
+            document.write(i + "<br>"); 
+        }
+}
+
+
+</script>
+
+</head>
+<body>
+    
+<h1>Click the robot to have it count for you.</h1>
+<img src="images/cartoon-robot-007.jpg" onClick="count()" />
+<h4>Images used by permision from how-to-draw-funny-cartoons.com</h4>
+
+</body>
+</html>

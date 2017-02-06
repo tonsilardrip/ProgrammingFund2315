@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Homework 7.2</title>
+<link rel="stylesheet" type="text/css" href="mystyles.css" />
+
+
+<script>
+
+function checkAnswers() {
+	//variables for conducting the quiz
+	var totalQuestions = 5;
+	var correctAnswers = 0;
+	var alertText;
+	var i;
+	
+	//get text in q1question1 box; drop to lower-case to make string comparison easier
+	var a1 = document.getElementById('q1').value.toLowerCase();
+	if(a1 == 'steve jobs') {
+		correctAnswers++;
+	}
+	
+	//iterate through all options in radio button list
+	//if checked value is true, answer is correct
+	var a2 = document.getElementsByName('q2');
+	for(i = 0; i < a2.length; i++) {
+		if(a2[i].checked) {
+			if(a2[i].value == 'false') {
+				correctAnswers++;
+				break;
+			}
+		}
+	}
+	
+	//iterate through all options in radio button list
+	//if checked value is augusta, answer is correct
+	var a3 = document.getElementsByName('q3');
+	for(i = 0; i < a3.length; i++) {
+		if(a3[i].checked) {
+			if(a3[i].value == 'ROM') {
+				correctAnswers++;
+				break;
+			}
+		}
+	}
+	
+	//put correct answers in new array
+	//iterate through all options in check box list
+	//add selected item to new array
+	//sort both checked answer and correct answer arrays by same criteria
+	//if both lists have same length and items at same data at same indexes,
+	//then we have all the correct answers for that question
+	var a4 = document.getElementsByName('q4');
+	var a4answers = new Array();
+	var a4right = new Array('Arithmetic logic unit','Control unit');
+	var a4bool = true;
+	
+	for(i = 0; i < a4.length; i++) {
+		if(a4[i].checked) {
+			a4answers.push(a4[i].value);
+		}
+	}
+	a4answers.sort();
+	a4right.sort();
+	if(a4answers.length == a4right.length) {
+		for(i = 0; i < a4answers.length; i++) {
+			if(a4answers[i] != a4right[i]) {
+				a4bool = false;
+				break;
+			}
+		}
+	}
+	else {
+		a4bool = false;
+	}
+	if(a4bool == true) {
+		correctAnswers++;
+	}
+	
+	//check selected index of pull-down box for correct answer
+	//indexes ALWAYS start at 0!
+	var q5 = document.getElementById('q5');
+	if(q5.selectedIndex == 3) {
+		correctAnswers++;
+	}
+	
+	if(correctAnswers == totalQuestions) {
+		alertText = "Congratulations! You got all the questions right!";
+	}
+	else {
+		alertText = "You got " + correctAnswers + " out of " + totalQuestions + " correct!";
+	}
+	document.getElementById()
+}
+</script>
+</head>
+
+<body>
+<div class="mypagewidth"> 
+<form>
+<h1>Basic Computer Exam! </h1>
+<form id="test">
+  <table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+      <td>1. Who created Apple Computer Inc. in 1976? </td>
+      <td><input name="q1" type="text" id="q1" size="30" maxlength="30" /></td>
+    </tr>
+    <tr>
+      <td>2. Steve Ballmer is the creator of Microsoft? </td>
+      <td><input name="q2" type="radio" value="true" />
+        True | 
+        <input name="q2" type="radio" value="false" />
+        False</td>
+    </tr>
+    <tr>
+      <td>3. Which of the following a non-volatile memory?  </td>
+      <td><input name="q3" type="radio" value="RAM" />
+      RAM | 
+        <input name="q3" type="radio" value="LSI" />
+      LSI | 
+      <input name="q3" type="radio" value="PCIe" />
+      PCIe | 
+      <input name="q3" type="radio" value="ROM" /> 
+      ROM | 
+      <input name="q3" type="radio" value="none" />
+      None of these </td>
+    </tr>
+    <tr>
+      <td width="30%">4. Which of the following are components of Central Processing Unit (CPU)? [Check all that apply] </td>
+      <td><input name="q4" type="checkbox" id="q4" value="Arithmetic logic unit" /> 
+        Arithmetic Logic Unit | 
+        <input name="q4" type="checkbox" id="q4" value="Integrated Circuits" />
+        Integrated Circuits | 
+        <input name="q4" type="checkbox" id="q4" value="Control unit" /> 
+        Control Unit | 
+        <input name="q4" type="checkbox" id="q4" value="Monitor" />
+        Monitor</td>
+    </tr>
+	<tr>
+      <td>5. A device that changes digital signals to analog signals is what?  </td>
+      <td><select name="q5" id="q5">
+        <option value="none">none</option>
+        <option value="aBlock">A Block</option>
+        <option value="aPacket">A Packet</option>
+        <option value="modem">Modem</option>
+        <option value="mDisk">Magnetic Disk</option>
+      </select>
+      </td>
+    </tr>
+  </table>
+  <br />
+  <input name="submit" type="button" onClick="checkAnswers()" value="Submit for grading" />
+  <input type="reset" value="Clear answers">
+</form>
+</div>
+</body>
+</html>

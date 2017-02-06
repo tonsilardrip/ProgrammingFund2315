@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lesson20</title>
+
+<script>
+
+function canYouVote()
+{
+        var nation
+    
+        nation = prompt("What is your nationality")
+        
+        
+        var age = prompt("What is your age?");
+        age = parseFloat(age);
+        if(age >="18" && (nation=="USA" || nation=="usa"))
+            {
+                
+                alert("You can vote")
+            }
+        else 
+            {
+    
+                alert("I'm sorry you must be older than 18 or a citizen of the U.S.A");
+            }
+}
+
+
+</script>
+
+</head>
+<body>
+
+
+<h1>Want to know if you can vote?</h1>
+<input type="submit" value="Start" onClick="canYouVote()"/>
+
+
+</body>
+</html>

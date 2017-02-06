@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lesson18 B/C</title>
+<link rel="stylesheet" type="text/css" href="mystyle.css" />
+
+
+<script>
+//Adds two numbers
+function calcAdd()
+{
+    //Declare caraibles and 
+    //get value from the text boxes
+    var x = document.getElementById("txtX").value; 
+    var y = document.getElementById("txtY").value;
+    var answer; //the answer will be stored here
+    
+    //Converts the string values to numbers with parseFloat
+    //This is only needed when you read values from a text box
+    x = parseFloat(x);
+    y = parseFloat(y);
+    
+    answer = x + y; //Add the two numbers
+    
+    //The plus concantenates the text with the answer
+    alert("The answer is " + answer);
+}
+function calcSubtract()
+{
+    //Declare varaibles and 
+    //get value from the text boxes
+    var x = document.getElementById("txtX").value; 
+    var y = document.getElementById("txtY").value;
+    var answer; //the answer will be stored here
+    
+    //Converts the string values to numbers with parseFloat
+    //This is only needed when you read values from a text box
+    x = parseFloat(x);
+    y = parseFloat(y);
+    
+    answer = x - y; //Add the two numbers
+    
+    //The plus concantenates the text with the answer
+    alert("The answer is " + answer);
+}
+
+
+</script>
+
+</head>
+<body>
+
+<div class="pagecenter">
+<h1>Simple Calculator</h1>
+<p>
+    Enter two numbers into the calculator 
+</p>
+
+<tr>
+    <td>X:</td>
+    <td><input id="txtX" type="text" value="0"></td>
+    </tr>
+<br>
+<tr>
+    <td>Y:</td>
+    <td><input id="txtY" type="text" value="0"></td>
+    </tr>
+    
+<br>    
+<input type="submit" value="Add" onClick="calcAdd()"/>
+<br>
+<input type="submit" value="Subtract" onClick="calcSubtract()"/>
+</div>
+
+
+
+</body>
+</html>

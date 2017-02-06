@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Example!</title>
+<script> 
+<!--The checkAnswer function displays an alert that shows tells the user that the page has loaded successfully.-->
+    function promptName()
+        {
+            var userName = prompt("What's your name ?", "")
+            return userName;
+        }
+    function goodBye()
+        {
+            alert("Goodbye, " + promptName() + "!");
+        }
+
+        
+</script>
+
+</head>
+
+<body onload="promptName()" onUnLoad="goodBye()" >
+
+
+        
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lesson17-B</title>
+<link rel="stylesheet" type="text/css" href="mystyle.css" />
+
+<script>
+/This function converts gallons to liters */
+function convertGallonsToLiters()
+    {
+        //Declares varibles for future use
+        var gallons;
+        var gallonsToLiters;
+        //Input: Get input from user and store it in the varible gallons
+        gallons = prompt("Enter a number in Gallons");
+        
+        //Process: Converts gallons to liters by dividing it by .26417
+        //Stores the answer in the variable gallonsToLiters
+        gallonsToLiters = gallons / .26417;
+        
+        /*Output: Return the answer to the user using an alert() function
+        * The value of the gallonsToLiters variable is passed to 
+        * the alert() function, which displays a popup dialog box with the value 
+        * Do not put quotes around gallonsToLiters or the alert will literally display
+        * "gallonsToLiters" instead of it's value
+        */
+        alert("Your " + gallons + " gallons are converted to " + gallonsToLiters.toFixed(2)  + " Liters");
+    }
+</script>
+
+</head>
+<body>
+<div class="pagecenter">   
+<center><input type="submit" value="Start" onClick="convertGallonsToLiters()"></center>
+</div>
+</body>
+</html>

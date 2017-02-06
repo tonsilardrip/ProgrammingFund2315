@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lesson15 C</title>
+<script> 
+// This is a function that asks the user for his or her name
+    function quiz()
+{
+        var answer = prompt("What is the Texas state flower?");
+        answer = answer.toLowerCase();
+        if(answer=="Bluebonnet" || answer=="bluebonnet")
+            {
+                //Correct Answer
+                alert("BlueBonnet is correct!")
+            }
+        else 
+            {
+                //Wrong Answer
+                alert("Sorry, wrong answer or wrong spelling. JavaScript is case sensitive.");
+            }
+}
+</script>
+
+</head>
+<body>
+
+<p> Do you know what the Texas state flower is? Click Start to process.
+</p>
+
+<input type="submit" value="Start" onClick="quiz()">
+</body>
+</html>

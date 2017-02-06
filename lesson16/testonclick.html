@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lesson16</title>
+<script>
+// This function checks if you have the correct answer
+function checkAnswer()
+{
+    //This little bit of code is to get the user's data from the text box
+    var answer = document.getElementById("textBox1").value;
+    /* This code compares the user's answer to the correct answer
+    *Java Script is case sensitive, so only a lower case beijing
+    * will be a correct answer.
+    * There are two required equal signs between (answer =="beijing")
+    */
+    if (answer == "beijing") {
+        alert("You win!");
+    } else {
+        alert("Wrong! Try again.");
+    }
+}
+
+// This function verifies the users entered an answer to a required question
+function isMissingAnswer()
+{
+   //This gets the answer entered by the user from the input box with the id of "txtName"
+   var answer = document.getElementById("textBox1").value;
+   /*This code checks to see that the user actually entered any value or not. 
+   *There are two required qual signs between (answer =="")
+   *Two quites is an emplty string, meaning there is not text in the text box
+   */
+   if (answer==""){
+       alert ("You must enter ann answer");
+       //This code returns cursor back to the text box forcing
+       // The user to answer the question.
+       document.getElementById("textBox1").focus();
+   }
+}
+</script>
+
+</head>
+<body>
+    
+<p id="question1">What is the capital of China?</p>
+<input type="text" id="textBox1" />
+<br/>
+
+<input type="submit" value="Submit your answer" onClick="checkAnswer()">
+
+</body>
+</html>

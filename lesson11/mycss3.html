@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lesson11</title>
+<style type="text/css">
+
+.roundit
+{
+border:2px solid;
+border-radius:25px;
+padding:10px;
+width:350px;
+}
+
+.pic
+{ 
+    width:75px; 
+    height:100px; 
+    
+} 
+
+.picbig
+{ 
+    position: absolute;
+    width:0px; 
+    -webkit-transition:width 0.3s linear 0s; 
+    transition:width 0.3s linear 0s; 
+    z-index:10; } 
+
+
+.pic:hover + .picbig
+{ 
+    width:200px; 
+    
+}
+
+</style>
+</head>
+<body>
+<h1> Habit 3: Put First Things First</h1>
+<p class="roundit"> Effective people implement activities that are in alignment with their long term goals. That means not doing the lesser important task to have time to do the most important task. 
+
+</p>
+<p>
+<img class="pic" src="images/7habitsbook_small.jpg" alt=""> 
+<img class="picbig" src="images/7habitsbook_small.jpg" alt="">
+
+</p>
+
+
+</body>
+</html>

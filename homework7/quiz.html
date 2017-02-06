@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<title>Homework 7</title>
+<link rel="stylesheet" type="text/css" href="mystyles.css" />
+
+
+        <script>
+            window.onload = function(){
+		// All varibles needed to conduct the quiz
+                var canvas = document.getElementById("myCanvas");
+                var context = canvas.getContext("2d");
+				var quizbg = new Image();
+				var Question = new String;
+				var Option1 = new String ;
+				var Option2 = new String;
+				var Option3 = new String;
+				var mx=0;
+				var my=0;
+				var CorrectAnswer = 0;
+				var qnumber = 0;
+				var rightanswers=0;
+				var wronganswers=0;
+				var QuizFinished = false;
+				var lock = false;
+				var textpos1=45;
+				var textpos2=145;
+				var textpos3=230;
+				var textpos4=325;
+				var GetFeedback;
+				var SetQuestions;
+				var ResetQ;
+				var EndQuiz;
+				var Questions = ["The term 'Pentium' is related to?","What does HTTP stand for?","Who invented Microsoft?",];
+				var Options = [["Microprocessor","Hard Disk","DVD Drive", ],["Hypertext Transfer Protocol","Head Tail Transfer Protocol","Hypertext Transfer Plot"],["Bill Gates","Steve Jobs","Steve Ballmer"]];
+
+
+				quizbg.onload = function(){
+			      context.drawImage(quizbg, 0, 0);
+				  SetQuestions();
+				}// This is the image that the answers float on. 
+				quizbg.src = "images/quizbg.png";
+
+
+
+				SetQuestions = function()
+				{
+
+					Question=Questions[qnumber];
+				//Math.floor rounds a number downward to its nearest integer
+				//Math.random return a random number between 0 (inclusive) and 1 (exclusive)
+				//With math.floor and math.random this allows the program to return the correct number of right or wrong answers to the last page of the quiz. the 1+ tells the program to that the random number is between 0.0 and 1.
+					CorrectAnswer=1+Math.floor(Math.random()*3);
+				//This is the first question
+					if(CorrectAnswer==1){Option1=Options[qnumber][0];Option2=Options[qnumber][1];Option3=Options[qnumber][2];}
+				//This is the second question	
+					if(CorrectAnswer==2){Option1=Options[qnumber][2];Option2=Options[qnumber][0];Option3=Options[qnumber][1];}
+				//This is the third question	
+					if(CorrectAnswer==3){Option1=Options[qnumber][1];Option2=Options[qnumber][2];Option3=Options[qnumber][0];}
+					
+					context.textBaseline = "middle";
+					context.font = "24pt Times New Roman,sans-serif";
+					context.fillText(Question,20,textpos1);
+					context.font = "18pt Times New Roman,sans-serif";
+					context.fillText(Option1,20,textpos2);
+					context.fillText(Option2,20,textpos3);
+					context.fillText(Option3,20,textpos4);
+					};
+				//This gets the user to the next question after the question is answered. 
+				canvas.addEventListener('click',ProcessClick,false);
+
+				function ProcessClick(ev) {
+
+				my=ev.y-canvas.offsetTop;
+
+				if(ev.y == undefined){
+					my = ev.pageY - canvas.offsetTop;
+				}
+
+			if(lock){
+				ResetQ();
+			}
+
+			else{
+
+			if(my>110 && my<180){GetFeedback(1);}
+			if(my>200 && my<270){GetFeedback(2);}
+			if(my>290 && my<360){GetFeedback(3);}
+
+			}
+
+				}
+
+
+	//This code is what calculates the right and wrong answers and allows it to be displayed on the last page.
+	// As well 
+		GetFeedback = function(a){
+
+		  if(a==CorrectAnswer){
+		  	context.drawImage(quizbg, 0,400,75,70,480,110+(90*(a-1)),75,70);
+			rightanswers++;
+			
+		  }
+		  else{
+		    context.drawImage(quizbg, 75,400,75,70,480,110+(90*(a-1)),75,70);
+			wronganswers++;
+		  }
+		  lock=true;
+		  context.font = "20pt Times New Roman,sans-serif";
+		  context.fillText("Click again to continue",20,380);
+		}
+
+
+		ResetQ= function(){
+		lock=false;
+		context.clearRect(0,0,550,400);
+		qnumber++;
+		if(qnumber==Questions.length){EndQuiz();}
+		else{
+		context.drawImage(quizbg, 0, 0);
+		SetQuestions();}
+		}
+
+	//This is the last page of the quiz that shows how many right and wrong questions you have. 
+		EndQuiz=function(){ 
+		canvas.removeEventListener('click',ProcessClick,false);
+		context.drawImage(quizbg, 0,0,550,90,0,0,550,400);
+		context.font = "20pt Times New Roman,sans-serif";
+		context.fillText("You have finished the quiz!",20,100);
+		context.font = "16pt Times New Roman,sans-serif";
+		context.fillText("Correct answers: "+String(rightanswers),20,200);
+		context.fillText("Wrong answers: "+String(wronganswers),20,240);
+		}
+			};
+
+        </script>
+
+
+    </head>
+    <body>
+
+<div id="ccontainer">
+<canvas id="myCanvas" width="552" height="400"></canvas>
+<p><cite>Image Source: Copyright Respective Owners. Academic Fair Use.</cite></p>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lesson17-A</title>
+
+<link rel="stylesheet" type="text/css" href="mystyle.css" />
+
+<script>
+/This function converts inches to metric */
+function convertInchesToMetric()
+    {
+        //Declares varibles for future use
+        var widthInInches;
+        var widthInMetric;
+        //Input: Get input from user and store it in the varible widthInInches
+        widthInInches = prompt("Enter a number in Inches");
+        
+        //Process: Converts inches to metric by multiplying by 2.54
+        //Stores the answer in the cariable widthInMetric
+        widthInMetric = widthInInches * 2.54;
+        
+        /*Output: Return the answer to the user using an alert() function
+        * The value of the widthInMetric variable is passed to 
+        * the alert() function, which displays a popup dialog box with the value 
+        * Do not put quotes around widthInMetric or the alert will literally display
+        * "widthInMetric" instead of it's value
+        */
+        alert("Your " + widthInInches + " inches are converted to " + widthInMetric + " centimeter");
+    }
+</script>
+
+</head>
+<body>
+<div class="pagecenter">      
+<center><input type="submit" value="Start" onClick="convertInchesToMetric()"></center>
+</div>
+</body>
+</html>

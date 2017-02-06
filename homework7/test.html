@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Homework 7.2</title>
+<link rel="stylesheet" type="text/css" href="mystyles.css" />
+
+
+<script>
+
+function checkAnswers() {
+    
+	var ans = document.getElementById("yourAnswer");
+	var a1 = document.getElementById('q1').value.toLowerCase();
+    	if(a1 == 'steve jobs') {
+		ans.innerHTML = "You got it right! Little info Jobs was a majority shareholder of Pixar, previously know as the Graphics Group.";
+    	}
+	else 
+	ans.innerHTML = "Sorry that's incorrect the correct answer is Steve Jobs";
+	}
+
+</script>
+</head>
+
+<body>
+<div class="mypagewidth"> 
+<form>
+<h1>Basic Computer Exam! </h1>
+
+  <table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+      <td>1. Who created Apple Computer Inc. in 1976? </td>
+      <td><input id="q1" type="text" size="30" maxlength="30" /></td>
+    </tr>
+    <tr>
+  </table>
+  <br />
+  <input name="submit" type="button" onClick="checkAnswers()" value="Submit for grading" />
+  <input type="reset" value="Clear answers">
+  
+<h2 id="yourAnswer"></h2>
+
+
+</div>
+</body>
+</html>

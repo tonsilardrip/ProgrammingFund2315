@@ -1,0 +1,35 @@
+body 
+    {
+        background-color:#E6E6FA;
+    }    
+
+H1
+    {
+        color:#2B60DE;
+    }
+H2
+    {
+       color:#2B60DE; 
+    }
+tr
+    {
+        color:#2B60DE;
+    }
+.mypagewidth
+{
+    margin:auto;
+	width:1100px;
+	background-color:#E6E6FA;
+	padding:1px; border:#2B60DE 10px groove;
+}
+#ccontainer
+{
+	  width:550px;
+	  margin: 0 auto;
+	  margin-top:250px;
+}
+
+#myCanvas
+{
+      background:#E6E6FA;
+}
